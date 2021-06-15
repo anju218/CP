@@ -13,6 +13,8 @@ Input: prices = [7,1,5,3,6,4]
 Output: 5
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
+
 */
 
  int maxProfit(vector<int>& prices) {
@@ -31,3 +33,16 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
         return max_profit;
     }
 };
+/*
+int maxProfit(vector<int>& prices) {
+int profit=0;
+int buy=INT_MAX;
+
+for(int price : prices)
+{
+	if(price < buy) buy=price;
+	if(profit < price - buy) profit = price - buy;
+}
+
+return profit;
+}*/
